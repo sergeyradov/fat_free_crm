@@ -4,8 +4,10 @@ services:
     build: .
     links:
       - db
+    depends_on:
+      - db
     ports:
-      - "80:80"
+      - "3000:3000"
     volumes:
       - gems:/usr/local/rvm/gems
     environment:
@@ -16,7 +18,16 @@ services:
       DB_PASSWORD: ''
       DB_HOST: 'db'
       DB_PORT: 5432
+      WEB_CONCURRENCY: 2
+
   db:
     image: postgres:9.5
+    restart: always
+    ports:
+    - '127.0.0.1:5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
 volumes:
+  pgdata: {}
   gems: {}

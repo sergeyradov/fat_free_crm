@@ -1,0 +1,9 @@
+*.md
+Dockerfile
+docker-compose.yml
+Vagrantfile
+MIT-LICENSE
+*.log
+.git
+.idea
+tmp
