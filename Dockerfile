@@ -1,4 +1,6 @@
 # Usage:
+# docker volume create pgdata
+# docker volume create gems
 # docker-compose up
 # docker-compose run web bundle exec rake db:create db:schema:load ffcrm:demo:load
 # docker-compose exec web bundle exec rake db:create db:schema:load ffcrm:demo:load
@@ -33,6 +35,8 @@ EXPOSE 3000
 CMD ["bundle","exec","rails","s"]
 
 # # Usage:
+# # docker volume create pgdata
+# # docker volume create gems
 # # docker-compose up
 # # docker-compose run web bundle exec rake db:create db:migrate db:schema:load ffcrm:demo:load assets:precompile
 # # docker-compose exec web bundle exec rake db:create db:migrate db:schema:load ffcrm:demo:load assets:precompile
